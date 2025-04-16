@@ -1,32 +1,252 @@
+//codigo de movimentação de peças de xadrez
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+   int main(){
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+// Definição de variáveis
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+   int opcao;
+   int direcaoTorre, direcaoBispo, direcaoRainha;
+   int casa = 1;
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+// Exibição do menu de opções
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+   printf("***Movimentação de peças de xadrez***\n");
+   printf("Escolha uma peça:\n");
+   printf("--------------------------------------------\n");
+   printf("1. Torre\n");
+   printf("2. Bispo\n");
+   printf("3. Rainha\n");
+   printf("--------------------------------------------\n");
+    scanf("%d", &opcao);
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+// Verificação da opção escolhida
+    switch(opcao){
+        case 1: 
+        printf("Você escolheu a Torre!\n"); // Exibe a opção escolhida
+        printf("A Torre se move em linha reta.\n");
+        printf("Escolha a direção:\n");
+        printf("1. Cima\n");
+        printf("2. Baixo\n");
+        printf("3. Direita\n");
+        printf("4. Esquerda\n");
+        scanf("%d", &direcaoTorre);
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+        switch(direcaoTorre){ //Switch para verificar a direção escolhida
+            case 1:
+                printf("A Torre se move 5 casas para cima.\n");
+                // A variável casa é inicializada com 1 e incrementada até 5
+                printf("------------------------------------------\n");
+                do {
+                    printf("Cima.\n");
+                    casa++;
+                } while(casa <= 5);
+                printf("------------------------------------------\n");
+                break;
+            case 2:
+                printf("A Torre se move 5 casas para baixo.\n");
+                // A variável casa é inicializada com 1 e incrementada até 5
+                printf("------------------------------------------\n");
+                do {
+                    printf("Baixo.\n");
+                    casa++;
+                } while(casa <= 5);
+                printf("------------------------------------------\n");
+                break;
+            case 3:
+                printf("A Torre se move 5 casas para a direita.\n");
+                // A variável casa é inicializada com 1 e incrementada até 5
+                printf("------------------------------------------\n");
+                do {
+                    printf("Direita.\n");
+                    casa++;
+                } while(casa <= 5);
+                printf("------------------------------------------\n");
+                break;
+            case 4:
+                printf("A Torre se move 5 casas para a esquerda.\n");
+                // A variável casa é inicializada com 1 e incrementada até 5
+                printf("------------------------------------------\n");
+                do {
+                    printf("Esquerda.\n");
+                    casa++;
+                } while(casa <= 5);
+                printf("------------------------------------------\n");
+                break;
+            default:
+                // Caso o usuário insira uma opção inválida
+                printf("Direção inválida.\n");
+                printf("------------------------------------------\n");
+                break;
+        }
+        break;
+        case 2: 
+        printf("Você escolheu o Bispo!\n"); // Exibe a opção escolhida
+        printf("O Bispo se move em diagonal.\n");
+        printf("Escolha a direção:\n");
+        printf("1. Cima Esquerda\n");
+        printf("2. Cima Direita\n");
+        printf("3. Baixo Direita\n");
+        printf("4. Baixo Esquerda\n");
+        scanf("%d", &direcaoBispo);
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+        switch(direcaoBispo){ //Switch para verificar a direção escolhida
+            case 1:
+                printf("O Bispo se move 5 casas para cima e para a esquerda.\n");
+                // A variável casa é inicializada com 1 e incrementada até 5
+                printf("------------------------------------------\n");
+                for (casa = 1; casa <= 5; casa++){
+                    printf("Cima Esquerda.\n");
+                }
+                printf("------------------------------------------\n");
+                break;
+            case 2:
+                printf("O Bispo se move 5 casas para cima e para a direita.\n");
+                // A variável casa é inicializada com 1 e incrementada até 5
+                printf("------------------------------------------\n");
+                for (casa = 1; casa <= 5; casa++){
+                    printf("Cima Direita.\n");
+                }
+                printf("------------------------------------------\n");
+                break;
+            case 3:
+                printf("O Bispo se move 5 casas para baixo e para a direita.\n");
+                // A variável casa é inicializada com 1 e incrementada até 5
+                printf("------------------------------------------\n");
+                for (casa = 1; casa <= 5; casa++){
+                    printf("Baixo Direita.\n");
+                }
+                printf("------------------------------------------\n");
+                break;
+            case 4:
+                printf("O Bispo se move 5 casas para baixo e para a esquerda.\n");
+                // A variável casa é inicializada com 1 e incrementada até 5
+                printf("------------------------------------------\n");
+                for (casa = 1; casa <= 5; casa++){
+                    printf("Baixo Esquerda.\n");
+                }
+                printf("------------------------------------------\n");
+                break;
+            default:
+                printf("Direção inválida.\n");
+                // Caso o usuário insira uma opção inválida
+                printf("------------------------------------------\n");
+                break;    
+        }
+        break;
+        case 3:
+            printf("Você escolheu a Rainha!\n"); // Exibe a opção escolhida
+            printf("A Rainha se move em linha reta e em diagonal.\n");
+            printf("Escolha a direção:\n");
+            printf("1. Cima\n");
+            printf("2. Baixo\n");
+            printf("3. Direita\n");
+            printf("4. Esquerda\n");
+            printf("5. Cima Esquerda\n");
+            printf("6. Cima Direita\n");
+            printf("7. Baixo Direita\n");
+            printf("8. Baixo Esquerda\n");
+            scanf("%d", &direcaoRainha);
 
-    return 0;
-}
+            switch(direcaoRainha){ //Switch para verificar a direção escolhida
+                case 1:
+                    printf("A rainha se move 8 casas para cima.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 8
+                    printf("------------------------------------------\n");
+                    while (casa <= 8){
+                        printf("Cima.\n");
+                        casa++;
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 2:
+                    printf("A rainha se move 8 casas para baixo.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 8
+                    printf("------------------------------------------\n");
+                    while (casa <= 8){
+                        printf("Baixo.\n");
+                        casa++;
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 3:
+                    printf("A rainha se move 8 casas para a direita.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 8
+                    printf("------------------------------------------\n");
+                    while (casa <= 8){
+                        printf("Direita.\n");
+                        casa++;
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 4:
+                    printf("A rainha se move 8 casas para a esquerda.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 8
+                    printf("------------------------------------------\n");    
+                    while (casa <= 8){
+                        printf("Esquerda.\n");
+                        casa++;
+                    }
+                    printf("------------------------------------------\n");
+                    break;  
+                case 5:
+                    printf("A rainha se move 8 casas para cima e para a esquerda.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 8
+                    printf("------------------------------------------\n");
+                    while (casa <= 8){
+                        printf("Cima Esquerda.\n");
+                        casa++;
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 6:
+                    printf("A rainha se move 8 casas para cima e para a direita.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 8
+                    printf("------------------------------------------\n");
+                    while (casa <= 8){
+                        printf("Cima Direita.\n");
+                        casa++;
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 7:
+                    printf("A rainha se move 8 casas para baixo e para a direita.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 8
+                    printf("------------------------------------------\n");
+                    while (casa <= 8){
+                        printf("Baixo Direita.\n");
+                        casa++;
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 8:
+                    printf("A rainha se move 8 casas para baixo e para a esquerda.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 8
+                    printf("------------------------------------------\n");
+                    while (casa <= 8){
+                        printf("Baixo Esquerda.\n");
+                        casa++;
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                default:
+                    printf("Direção inválida.\n");
+                    // Caso o usuário insira uma opção inválida
+                    printf("------------------------------------------\n");
+                    break;                                
+            }
+            break;
+
+        default:
+            printf("Opção inválida.\n");
+            // Caso o usuário insira uma opção inválida
+            printf("------------------------------------------\n");
+            break;
+    }
+
+    printf("Obrigado por jogar!!\n");
+    printf("------------------------------------------\n");
+    
+            return 0;
+        }   
+                            
