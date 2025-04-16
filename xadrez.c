@@ -6,7 +6,7 @@
 // Definição de variáveis
 
    int opcao;
-   int direcaoTorre, direcaoBispo, direcaoRainha;
+   int direcaoTorre, direcaoBispo, direcaoRainha, direcaoCavalo;
    int casa = 1;
 
 // Exibição do menu de opções
@@ -17,6 +17,7 @@
    printf("1. Torre\n");
    printf("2. Bispo\n");
    printf("3. Rainha\n");
+   printf("4. Cavalo\n");
    printf("--------------------------------------------\n");
     scanf("%d", &opcao);
 
@@ -236,7 +237,76 @@
                     break;                                
             }
             break;
+        case 4:
+            printf("Voce escolheu o Cavalo!\n"); // Exibe a opção escolhida
+            printf("O Cavalo se move em L.\n");
+            printf("Escolha a direção:\n");
+            printf("1. Cima Direita\n");
+            printf("2. Cima Esquerda\n");
+            printf("3. Baixo Direita\n");
+            printf("4. Baixo Esquerda\n");
+            scanf("%d", &direcaoCavalo);
 
+            switch(direcaoCavalo){
+                case 1:
+                    printf("O cavalo se move 2 casas para cima e 1 para a direita.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 2
+                    printf("------------------------------------------\n");
+                    while (casa <= 2)
+                    {
+                       for(casa = 1; casa <= 2; casa++){
+                        printf("Cima.\n");
+                       }
+                       printf("Direita.\n");
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 2:
+                    printf("O cavalo se move 2 casas para cima e 1 para a esquerda.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 2
+                    printf("------------------------------------------\n");
+                    while (casa <= 2)
+                    {
+                       for(casa = 1; casa <= 2; casa++){
+                        printf("Cima.\n");
+                       }
+                       printf("Esquerda.\n");
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 3:
+                    printf("O cavalo se move 2 casas para baixo e 1 para a direita.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 2
+                    printf("------------------------------------------\n");
+                    while (casa <= 2)
+                    {
+                       for(casa = 1; casa <= 2; casa++){
+                        printf("Baixo.\n");
+                       }
+                       printf("Direita.\n");
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                case 4:
+                    printf("O cavalo se move 2 casas para baixo e 1 para a esquerda.\n");
+                    // A variável casa é inicializada com 1 e incrementada até 2
+                    printf("------------------------------------------\n");
+                    while (casa <= 2)
+                    {
+                       for(casa = 1; casa <= 2; casa++){
+                        printf("Baixo.\n");
+                       }
+                       printf("Esquerda.\n");
+                    }
+                    printf("------------------------------------------\n");
+                    break;
+                default:
+                    printf("Direção inválida.\n");
+                    // Caso o usuário insira uma opção inválida
+                    printf("------------------------------------------\n");
+                    break;                
+            }
+            break;
         default:
             printf("Opção inválida.\n");
             // Caso o usuário insira uma opção inválida
